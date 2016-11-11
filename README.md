@@ -4,7 +4,7 @@
 # 爬虫调度端
 
 ## URL管理器：
-管理待抓取URL集合和已抓取URL集合，防止重复抓取和循环抓取
+管理待抓取URL集合和已抓取URL集合，防止重复抓取和循环抓取。
 
 - 添加新的URL到待爬取集合中
 - 判断待添加URL是否在容器中
@@ -13,14 +13,25 @@
 - 将URL从待爬取移动到已爬取
 
 ```
-$ 实现方式：
+实现方式：
 内存：Python内存。set()
 关系数据库：MySQL。urls(url, is_crawled)
 缓存数据库：Redis。set()
 ```
 
 ## 网页下载器：
-- urllib2
+- urllib2（本例的实现方式）
+```
+urllib2：3种下载网页方法
+- 最简洁方法：urllib2.urlopen(url)
+- 添加data，httpheaders等：(url、data、headers) ->urllib2.Request -> urllib2.urlopen(Request)
+- 添加特殊情况的处理器：
+    1.  HTTPcookieProcessor、ProxyHander、HTTPSHander、HTTPRedireHander
+    2.  opener = urllib2.build_opener(hander)
+    3.  urllib2.install_opener(opener)
+    4.  urllib2.urlopen(url)或者urllib2.urlopen(Request)
+
+```
 - requests
 
 ## 网页解析器：
@@ -28,9 +39,21 @@ $ 实现方式：
 - html.parser（结构化解析）
 - BeautifulSoup（结构化解析）
 - lxml（结构化解析）
+```
+  结构化解析DOM树：[文档对象模型](https://zh.wikipedia.org/wiki/%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B)（英语：Document Object Model，缩写DOM），是W3C组织推荐的处理可扩展置标语言的标准编程接口。
+```
+```
+  BeautifulSoup语法：
+  创建BeautifulSoup对象 -> 搜索节点（find_all或find）-> 访问节点（名称、属性、文本）
+```
 
 ## 一个简单的爬虫实例：
 - 确定目标
-- 分析目标：URL格式、数据格式、网页编码
+- 分析目标
+```
+  URL格式
+  数据格式
+  网页编码
+```
 - 编写代码
 - 执行代码
