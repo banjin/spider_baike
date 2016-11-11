@@ -3,13 +3,13 @@
 
 # 爬虫调度端
 
-form spider_baike import url_manager, html_downloader, html_outputer, html_parser
+import url_manager, html_downloader, html_outputer, html_parser
 
 class SpiderMain(object):
     
     # 初始化url_manager、html_downloader、html_parser、html_outputer四个模块
     def __init__(self):
-        self.maxcount = 1000    #抓取数据数量
+        self.maxcount = 1000    #设置最大抓取数据数量
         self.urls = url_manager.UrlManager()
         self.downloader = html_downloader.HtmlDownloader()
         self.parser = html_parser.HtmlParser()
