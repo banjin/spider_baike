@@ -40,7 +40,7 @@ urllib2：3种下载网页方法
 - BeautifulSoup（结构化解析）
 - lxml（结构化解析）
 ```
-  结构化解析DOM树：[文档对象模型][ohmyzsh](https://twitter.com/ohmyzsh)（英语：Document Object Model，缩写DOM），是W3C组织推荐的处理可扩展置标语言的标准编程接口。
+  结构化解析DOM树：[文档对象模型]（英语：Document Object Model，缩写DOM），是W3C组织推荐的处理可扩展置标语言的标准编程接口。
 
   BeautifulSoup语法：
   创建BeautifulSoup对象 -> 搜索节点（find_all或find）-> 访问节点（名称、属性、文本）
