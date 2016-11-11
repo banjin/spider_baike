@@ -1,6 +1,8 @@
 #!/usr/bin/env python2.7
 # -*- coding: UTF-8 -*-
 
+# URL 管理模块：存储URL信息，管理URL集合。防止重复抓取和循环抓取。
+
 class UrlManager(object):
     def __init__(self):
         self.new_urls = set()
